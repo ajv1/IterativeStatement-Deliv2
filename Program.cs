@@ -29,17 +29,27 @@ namespace IterativeStatement_Deliv2
                 // This variable will be used to perform the various iterative statements and is parsed as an integer
                 int value_of_input = int.Parse(input);
 
-                for (int i = 0; i < value_of_input; i++)
-                {
+                if ((value_of_input > 0) && (value_of_input < 101))
+                {                                 
+
+                    for (int i = 0; i < value_of_input; i++)
+                    {   
                     Console.WriteLine("You have entered: " + i + ". This is the current integer value in the loop: " + i.ToString());
+                    }
+                    Console.WriteLine("Press any key to exit the program ...");
+                    // Pause the program and await the user to press a key to end the program
+                    Console.ReadKey(true);
                 }
-                Console.WriteLine("Press any key to exit the program ...");
-                // Pause the program and await the user to press a key to end the program
-                Console.ReadKey(true);
+                else
+                {
+                    // Will show an error if the number is not between 1 and 100
+                    Console.WriteLine("Please enter a value between 1 and 100");
+                    Console.WriteLine("Press any key to exit and try again...");
+                }
             } // end of try
             catch
             {
-                Console.WriteLine("Please enter an integer value and try running the program again ...");
+                Console.WriteLine("Please enter an integer value between 0-100 and try running the program again ...");
                 Console.WriteLine("Press any key to exit the program ...");
                 Console.ReadKey(true);
 
